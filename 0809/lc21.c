@@ -1,8 +1,4 @@
-/**
- * https://leetcode.cn/problems/merge-two-sorted-lists/description/
- * Definition for singly-linked list.
-
- */
+/*https://leetcode.cn/problems/merge-two-sorted-lists/description/*/
 #include<stdio.h>
 
 struct ListNode {
