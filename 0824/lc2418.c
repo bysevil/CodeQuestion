@@ -52,3 +52,30 @@ char ** sortPeople(char ** names, int namesSize, int* heights, int heightsSize, 
     *returnSize = namesSize;
     return names;
 }
+
+//利用库函数qsort
+typedef struct{
+    char* name;
+    int height;
+}people;
+
+int cmp(const void* a, const void* b){
+    return ((people*)b)->height - ((people*)a)->height;
+}
+
+char ** sortPeople(char ** names, int namesSize, int* heights, int heightsSize, int* returnSize){
+    people* peoples = (people*)malloc(namesSize*sizeof(people));
+
+    for(int i = 0; i < namesSize; i++){
+        peoples[i].name = names[i];
+        peoples[i].height = heights[i];
+    }
+
+    qsort(peoples,namesSize,sizeof(people),cmp);
+
+    for(int i = 0; i < namesSize; i++){
+        names[i] = peoples[i].name;
+    }
+    *returnSize = namesSize;
+    return names;
+}
