@@ -9,3 +9,13 @@ int alternateDigitSum(int n){
     }
     return -flag * ans;
 }
+
+int alternateDigitSum(int n){
+    int ans = 0;
+
+    while (n) {
+        ans = -1 * ans + n % 10;
+        n /= 10;
+    }
+    return ans;
+}
