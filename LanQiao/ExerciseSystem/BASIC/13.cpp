@@ -1,11 +1,6 @@
 #include<iostream>
-#include<stdlib.h>
+#include<algorithm>
 using namespace std;
-
-int cmp (const void * a, const void * b)
-{
-   return ( *(int*)a - *(int*)b );
-}
 
 int main(){
 	int n;
@@ -14,7 +9,7 @@ int main(){
 	for(int i = 0; i < n; i++){
 		cin >> a[i];
 	}
-	qsort(a,n,sizeof(int),cmp);
+	sort(a,a+n,less<int>());
 	for(int i = 0; i < n; i++){
 		cout << a[i] << ' ';
 	}
