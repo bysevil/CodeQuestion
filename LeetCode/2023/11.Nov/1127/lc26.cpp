@@ -2,7 +2,6 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
         auto pos = nums.begin();
         while(pos != nums.end()-1){
             if(*pos == *(pos + 1)){
