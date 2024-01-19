@@ -9,7 +9,7 @@ struct TreeNode{
 };
 
 int PostOrder(struct TreeNode* root,bool* ans){
-    if(root == NULL)
+    if(root == NULL || *ans == false)
         return 0;
     
     int left = PostOrder(root->left,ans);
